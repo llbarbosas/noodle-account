@@ -1,4 +1,4 @@
-<p align="center"><img src=".github/logo.svg" width="80"/></p>
+<p align="center"><img src=".github/logo.svg" width="400"/></p>
 <h2 align="center">noodle-account</h2>
 <p align="center">Identity provider</p> 
 <p align="center">
