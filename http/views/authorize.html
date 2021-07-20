@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Autorizar aplicação</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/tailwind.min.css" rel="stylesheet" />
+    <link href="/styles.css" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" />
+  </head>
+  <body>
+    <div class="relative w-full h-full"
+    style="
+      background-color: #e8e8e8;
+    ">
+      <div class="flex h-screen items-center justify-center overflow-y-auto">
+        <div
+          class="bg-white card w-full shadow-md m-0 md:max-h-5/6 md:h-auto h-full md:rounded-3xl"
+        >
+          <div class="p-10">
+            <h1 class="font-semibold text-2xl mt-8 mb-10">
+              {{ .UserName }}, <br><span class="highlight-text">{{ .ClientName }}</span> deseja acessar sua conta Noodle</h1>
+            <h4 class="font-medium mb-5">Isso permite a <span class="highlight-text">{{ .ClientName }}</span>:</h4>
+
+            {{ range $key, $value := .Scopes }}
+              <div class="flex items-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor" height="20px" width="20px">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <p class="text-sm block font-medium text-gray-500">
+                  {{ $value }}
+                </p>
+              </div>
+            {{ end }}
+            
+            <form action="/oauth/authorize" method="POST" class="mt-10">
+              <input type="hidden" name="_aid" value="{{ .AID }}"/>
+              <div class="flex justify-between">
+                <button
+                type="submit"
+                name="authorize" value="0"
+                class="block text-center text-white bg-gray-300 flex-1 mr-4 p-3 duration-300 rounded-md hover:bg-gray-400 focus:outline-none"
+              >
+                Negar
+              </button>
+              <button
+                type="submit"
+                name="authorize" value="1"
+                class="block text-center text-white bg-blue-400 flex-1 p-3 duration-300 rounded-md hover:bg-blue-700 focus:outline-none"
+              >
+                Permitir
+              </button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

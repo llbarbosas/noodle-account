@@ -1,0 +1,28 @@
+* {
+  font-feature-settings: "liga", "calt";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  font-family: Montserrat, sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 520px;
+  }
+}
+
+.highlight-text {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 70%,
+    rgb(205 224 255 / 99%) 30%
+  );
+  color: #1c4387;
+  font-weight: 600;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}

@@ -1,0 +1,36 @@
+From: Conta Noodle <noreply@noodle.com>
+To: {{ .To }} 
+Subject: Confirmar e-mail
+MIME-version: 1.0; 
+Content-Type: text/html; charset="UTF-8";
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang="pt-BR"  
+  style="
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+  "
+>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv=”Content-Type” content=”text/html; charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmação de email</title>
+</head>
+Redefinição de senha
+
+Parece que você solicitou uma nova senha da Noodle. 
+Se isso for verdade, clique no botão abaixo.
+
+<a
+  href="http://127.0.0.1:3001/signin/password_reset?code={{ .Code }}" 
+  target="_blank"
+  >Redefinir minha senha</a>
+</body>
+</html>
+
+
+
+
